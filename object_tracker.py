@@ -209,7 +209,6 @@ def main(_argv):
             cv2.rectangle(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), color, 2)
             cv2.rectangle(frame, (int(bbox[0]), int(bbox[1]-30)), (int(bbox[0])+(len(class_name)+len(str(track.track_id)))*17, int(bbox[1])), color, -1)
             cv2.putText(frame, class_name + "-" + str(track.track_id),(int(bbox[0]), int(bbox[1]-10)),0, 0.75, (255,255,255),2)
-            cv2.putText(frame, "Total perons - " + max(track.track_id), (20, offset), 0, 0.75, (255,255,255),2)
 
         # if enable info flag then print details about each track
             if FLAGS.info:
@@ -218,6 +217,8 @@ def main(_argv):
         # calculate frames per second of running detections
         fps = 1.0 / (time.time() - start_time)
         print("FPS: %.2f" % fps)
+        print("Total perons: " + max(track))
+        cv2.putText(frame, "Total perons: " + max(track), (20, offset), 0, 0.75, (255,255,255),2)
         result = np.asarray(frame)
         result = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
         
