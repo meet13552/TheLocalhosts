@@ -218,6 +218,7 @@ def main(_argv):
         fps = 1.0 / (time.time() - start_time)
         print("FPS: %.2f" % fps)
         t_persons = []
+        print(len(tracker))
         #for track in tracker.tracks:
             #t_persons.append(track.track_id)
         #print(max(t_persons))
