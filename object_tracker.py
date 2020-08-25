@@ -221,7 +221,7 @@ def main(_argv):
         tstr = "Total persons: " + str(t_persons)
         print(tstr)
         font = cv2.FONT_HERSHEY_SIMPLEX
-        cv2.putText(frame, tstr, (20,50), font, 0, (0, 255, 0), 2, cv2.LINE_AA)
+        cv2.putText(frame, tstr, (20,50), font, 1, (0, 255, 0), 2, cv2.LINE_AA)
         result = np.asarray(frame)
         result = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
         
