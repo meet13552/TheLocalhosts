@@ -217,8 +217,8 @@ def main(_argv):
         # calculate frames per second of running detections
         fps = 1.0 / (time.time() - start_time)
         print("FPS: %.2f" % fps)
-        print(len(tracker))
-        cv2.putText(frame, "Total perons: " + len(tracker), (20, 20), 0, 0.75, (255,255,255),2)
+        print("Total persons:" + len(tracker))
+        cv2.putText(frame, "Total persons:" + len(tracker), (10,450), font, 3, (0, 255, 0), 2, cv2.LINE_AA)
         result = np.asarray(frame)
         result = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
         
